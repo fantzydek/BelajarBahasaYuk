@@ -1,4 +1,4 @@
-# MikuAI — Learn Languages. Understand the World.
+# BelajarBahasaYukb— Learn Languages. Understand the World.
 
 MikuAI is a production-minded, full-stack **AI language learning platform**: an interactive AI tutor with streaming responses, a context-aware translator, a structured language academy, smart vocabulary with flashcards, AI-generated quizzes with server-side grading, a unified learning history, live analytics, and a protected admin panel — all backed by a real database and a real AI provider.
 

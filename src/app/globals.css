@@ -1,0 +1,270 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-silver: var(--silver);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/*
+ * MikuAI design system — premium dark SaaS.
+ * Background #080B10 · Text #FFFFFF · Accent #267BFF · Silver #A8B7CC
+ * Dark-only application: tokens are defined at :root.
+ */
+:root {
+  --radius: 0.75rem;
+
+  --background: #080b10;
+  --foreground: #ffffff;
+  --card: #0d1219;
+  --card-foreground: #ffffff;
+  --popover: #0d1219;
+  --popover-foreground: #ffffff;
+
+  --primary: #267bff;
+  --primary-foreground: #ffffff;
+
+  --secondary: #131a24;
+  --secondary-foreground: #e6ecf4;
+
+  --muted: #11161f;
+  --muted-foreground: #8b99ad;
+  --silver: #a8b7cc;
+
+  --accent: #16233a;
+  --accent-foreground: #dce8ff;
+
+  --destructive: #ef4d56;
+  --border: rgba(168, 183, 204, 0.13);
+  --input: rgba(168, 183, 204, 0.16);
+  --ring: rgba(38, 123, 255, 0.55);
+
+  --chart-1: #267bff;
+  --chart-2: #43d0a0;
+  --chart-3: #f0b429;
+  --chart-4: #9d7bff;
+  --chart-5: #ef4d56;
+
+  --sidebar: #0a0e14;
+  --sidebar-foreground: #dbe3ee;
+  --sidebar-primary: #267bff;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #10151d;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(168, 183, 204, 0.09);
+  --sidebar-ring: rgba(38, 123, 255, 0.55);
+}
+
+.dark {
+  --background: #080b10;
+  --foreground: #ffffff;
+  --card: #0d1219;
+  --card-foreground: #ffffff;
+  --popover: #0d1219;
+  --popover-foreground: #ffffff;
+  --primary: #267bff;
+  --primary-foreground: #ffffff;
+  --secondary: #131a24;
+  --secondary-foreground: #e6ecf4;
+  --muted: #11161f;
+  --muted-foreground: #8b99ad;
+  --accent: #16233a;
+  --accent-foreground: #dce8ff;
+  --destructive: #ef4d56;
+  --border: rgba(168, 183, 204, 0.13);
+  --input: rgba(168, 183, 204, 0.16);
+  --ring: rgba(38, 123, 255, 0.55);
+  --chart-1: #267bff;
+  --chart-2: #43d0a0;
+  --chart-3: #f0b429;
+  --chart-4: #9d7bff;
+  --chart-5: #ef4d56;
+  --sidebar: #0a0e14;
+  --sidebar-foreground: #dbe3ee;
+  --sidebar-primary: #267bff;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #10151d;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(168, 183, 204, 0.09);
+  --sidebar-ring: rgba(38, 123, 255, 0.55);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'cv11', 'ss01';
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: rgba(38, 123, 255, 0.35);
+    color: #ffffff;
+  }
+}
+
+/* ---------- Custom scrollbars ---------- */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(168, 183, 204, 0.25) transparent;
+}
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(168, 183, 204, 0.22);
+  border-radius: 999px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 183, 204, 0.4);
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ---------- Micro-animations ---------- */
+@keyframes miku-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-up {
+  animation: miku-fade-up 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes miku-pulse-dot {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+.animate-pulse-dot {
+  animation: miku-pulse-dot 1.4s ease-in-out infinite;
+}
+@keyframes miku-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+.animate-float {
+  animation: miku-float 6s ease-in-out infinite;
+}
+
+/* Transition helper for interactive cards/buttons */
+.card-hover {
+  transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-hover:hover {
+  border-color: rgba(38, 123, 255, 0.45);
+  box-shadow: 0 8px 30px -12px rgba(38, 123, 255, 0.25);
+}
+
+/* ---------- Markdown (AI tutor output) ---------- */
+.ai-prose {
+  @apply text-[15px] leading-relaxed text-foreground/90;
+}
+.ai-prose h1, .ai-prose h2, .ai-prose h3 {
+  @apply font-semibold text-foreground mt-4 mb-2;
+  font-family: var(--font-display), var(--font-inter), sans-serif;
+}
+.ai-prose h1 { font-size: 1.15rem; }
+.ai-prose h2 { font-size: 1.05rem; }
+.ai-prose h3 { font-size: 0.98rem; }
+.ai-prose p { @apply my-2; }
+.ai-prose ul { @apply my-2 pl-5 list-disc space-y-1; }
+.ai-prose ol { @apply my-2 pl-5 list-decimal space-y-1; }
+.ai-prose li { @apply ml-1; }
+.ai-prose strong { @apply text-foreground font-semibold; }
+.ai-prose code {
+  @apply px-1.5 py-0.5 rounded-md text-[13px];
+  background: rgba(38, 123, 255, 0.12);
+  color: #9cc2ff;
+}
+.ai-prose pre {
+  @apply my-3 p-4 rounded-xl overflow-x-auto text-[13px];
+  background: #0a0f16;
+  border: 1px solid rgba(168, 183, 204, 0.12);
+}
+.ai-prose pre code { background: transparent; padding: 0; color: inherit; }
+.ai-prose blockquote {
+  @apply my-3 pl-4 border-l-2 italic;
+  border-color: rgba(38, 123, 255, 0.5);
+  color: var(--silver);
+}
+.ai-prose table { @apply my-3 w-full text-sm; }
+.ai-prose th { @apply px-3 py-2 text-left font-semibold; background: rgba(38, 123, 255, 0.08); }
+.ai-prose td { @apply px-3 py-2 border-t; }
+.ai-prose a { @apply text-[#5c9bff] underline underline-offset-2; }
+
+/* Typing cursor for streaming responses */
+.stream-cursor::after {
+  content: '▍';
+  display: inline-block;
+  color: #267bff;
+  animation: miku-pulse-dot 0.9s ease-in-out infinite;
+  margin-left: 2px;
+}
+
+/* Landing hero glow (single subtle accent, not a gradient wall) */
+.hero-glow {
+  position: absolute;
+  inset: auto;
+  width: 640px;
+  height: 640px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(38, 123, 255, 0.14) 0%, transparent 65%);
+  pointer-events: none;
+}
